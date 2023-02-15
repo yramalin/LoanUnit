@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_4E8674C1-DA73-40BA-BA3D-59263C4A8EA0" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_BAF4238B-547E-42B4-A9D0-F2ECC4BA2671" name="LoanUnit" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_4E8674C1-DA73-40BA-BA3D-59263C4A8EA0">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_05B4FC50-B4DF-41E2-A1C6-8B64F8157058" name="Applicant" isCollection="false">
+    <dmn:itemComponent id="_0B35FB65-2153-49E8-9956-97AFB1A5334C" name="age" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_AD8373B0-F17D-4BA2-95D7-6E0AB63D71D7" name="name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_2E2F4B47-5808-4054-B70D-6E1ABC456EE5" name="loanApplications" isCollection="true">
+    <dmn:itemComponent id="_9A126E7E-9BA0-4451-9F02-9FCE43661953" name="id" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B5AF7AF4-96C7-4B95-BF33-45C96B35F4B9" name="amount" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_791E608B-9EEB-4624-9205-49414C1C9D10" name="deposit" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_2E3A806A-121C-4C0B-B83A-FA0C7CF9986F" name="applicant" isCollection="false">
+      <dmn:typeRef>Applicant</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_C47C7E70-8D6C-40E0-85F7-17F3F1CF6422" name="loanApplications">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A1CFEFC1-2ED6-48CB-8528-3BA9EBA18D39" name="loanApplications" typeRef="loanApplications"/>
+  </dmn:inputData>
+  <dmn:inputData id="_E69D1ED5-B1A8-4252-A3EF-1D4F14A180CE" name="maxAmount">
+    <dmn:extensionElements/>
+    <dmn:variable id="_440F004C-979E-4AA0-971C-1C0C7A72A853" name="maxAmount" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:decision id="_DCB4AE89-DC90-4EB7-B94A-5F2157412BB7" name="FindApproved">
+    <dmn:extensionElements/>
+    <dmn:variable id="_26A2EEA4-3797-47A2-B37D-BAF2B85423AD" name="FindApproved"/>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_F8DFD8E9-6FD1-477D-86FF-B377871DB795" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension/>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_C47C7E70-8D6C-40E0-85F7-17F3F1CF6422" dmnElementRef="_C47C7E70-8D6C-40E0-85F7-17F3F1CF6422" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="378.5981308411215" y="227" width="133" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_E69D1ED5-B1A8-4252-A3EF-1D4F14A180CE" dmnElementRef="_E69D1ED5-B1A8-4252-A3EF-1D4F14A180CE" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="630" y="227" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_DCB4AE89-DC90-4EB7-B94A-5F2157412BB7" dmnElementRef="_DCB4AE89-DC90-4EB7-B94A-5F2157412BB7" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="530" y="93" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
